@@ -103,6 +103,10 @@ const App: FC<{ theme: Theme<any> }> = ({ theme: initTheme }) => {
                     {/* <BeiAn /> */}
                 </p>
             )}
+            <ThemeChanger
+                changeTheme={changeTheme}
+                onDiyClick={() => setDiyDialogShow(true)}
+            />
         </>
     );
 };

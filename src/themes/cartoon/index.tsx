@@ -1,7 +1,7 @@
 // 钓鱼佬主题
 import React from 'react';
 import { Theme } from '../interface';
-import { DefaultSoundNames } from '../default';
+import { DefaultSoundNames } from '../emoji';
 
 const imagesUrls = import.meta.glob('./images/*.png', {
     import: 'default',

@@ -128,6 +128,8 @@ export const deleteThemeUnusedSounds = (theme: Theme<any>) => {
 
 export const domRelatedOptForTheme = (theme: Theme<any>) => {
     document.body.style.background = theme.backgroundColor || 'white';
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
     document.body.style.color = theme.dark ? 'white' : 'rgb(0 0 0 / 60%)';
 };
 

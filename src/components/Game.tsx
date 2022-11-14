@@ -133,7 +133,7 @@ const Symbol: FC<SymbolProps> = ({ x, y, icon, isCover, status, onClick }) => {
         >
             <div
                 className="symbol-inner"
-                style={{ opacity: isCover ? 0.4 : 1 }}
+                style={{ opacity: isCover ? 0.6 : 1 }}
             >
                 {typeof icon.content === 'string' ? (
                     icon.content.startsWith('data:') ||
@@ -282,6 +282,7 @@ const Game: FC<{
             // 音效
             if (soundRefMap.current?.['sound-shift']) {
                 soundRefMap.current['sound-shift'].currentTime = 0;
+                soundRefMap.current['sound-shift'].volume = 0.6;
                 soundRefMap.current['sound-shift'].play().then();
             }
         }
@@ -302,6 +303,7 @@ const Game: FC<{
             // 音效
             if (soundRefMap.current?.['sound-undo']) {
                 soundRefMap.current['sound-undo'].currentTime = 0;
+                soundRefMap.current['sound-undo'].volume = 0.6;
                 soundRefMap.current['sound-undo'].play().then();
             }
         }
@@ -314,6 +316,7 @@ const Game: FC<{
         // 音效
         if (soundRefMap.current?.['sound-wash']) {
             soundRefMap.current['sound-wash'].currentTime = 0;
+            soundRefMap.current['sound-wash'].volume = 0.6;
             soundRefMap.current['sound-wash'].play().then();
         }
     };
@@ -362,6 +365,7 @@ const Game: FC<{
         // 点击音效
         if (soundRefMap.current?.[symbol.icon.clickSound]) {
             soundRefMap.current[symbol.icon.clickSound].currentTime = 0;
+            soundRefMap.current[symbol.icon.clickSound].volume = 0.6;
             soundRefMap.current[symbol.icon.clickSound].play().then();
         }
 
@@ -393,6 +397,9 @@ const Game: FC<{
                         soundRefMap.current[
                             symbol.icon.tripleSound
                         ].currentTime = 0;
+                        soundRefMap.current[
+                            symbol.icon.tripleSound
+                        ].volume = 0.6;
                         soundRefMap.current[symbol.icon.tripleSound]
                             .play()
                             .then();

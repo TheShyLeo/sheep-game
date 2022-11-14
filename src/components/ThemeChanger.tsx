@@ -2,10 +2,27 @@ import React, { FC, useState } from 'react';
 import style from './ThemeChanger.module.scss';
 import classNames from 'classnames';
 import { cartoonTheme } from '../themes/cartoon';
-import { getDefaultTheme } from '../themes/default';
+import { emojiTheme } from '../themes/emoji';
+import { jayTheme } from '../themes/jay';
+import { xiaoxinTheme } from '../themes/xiaoxin';
+import { shumaTheme } from '../themes/shuma';
+import { shenqiTheme } from '../themes/shenqi';
+import { meishaoTheme } from '../themes/meishao';
+import { haliTheme } from '../themes/hali';
+import { haimianTheme } from '../themes/haimian';
 import { Theme } from '../themes/interface';
 
-const BuiltinThemes = [cartoonTheme];
+const BuiltinThemes = [
+    cartoonTheme,
+    emojiTheme,
+    jayTheme,
+    xiaoxinTheme,
+    shumaTheme,
+    shenqiTheme,
+    meishaoTheme,
+    haliTheme,
+    haimianTheme,
+];
 
 const ThemeChanger: FC<{
     changeTheme: (theme: Theme<any>) => void;
@@ -44,20 +61,6 @@ const ThemeChanger: FC<{
                         )}
                     </div>
                 ))}
-                <div
-                    className={classNames(style.square, style.diy)}
-                    onClick={() => {
-                        setOpen(false);
-                        onDiyClick();
-                    }}
-                    style={{
-                        transform: open
-                            ? `translateY(-${110 * 6}%)`
-                            : 'translateX(-110%)',
-                    }}
-                >
-                    {open ? '点我整活' : 'DIY!'}
-                </div>
 
                 <div
                     onClick={() => setOpen(!open)}
